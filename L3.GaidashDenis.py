@@ -1,3 +1,6 @@
+# https://github.com/iDeeGee/SYNERGY.Gaidash_Denis/blob/main/L3.GaidashDenis.py
+
+
 # Задание 1:
 type = input("Введите вид питомца: ")
 age = input("Его возраст: ")
