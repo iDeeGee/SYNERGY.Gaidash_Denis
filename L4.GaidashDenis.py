@@ -1,11 +1,11 @@
 # Задание 1:
-# side_a = float(input("Введите сторону a: "))
-# side_b = float(input("Введите сторону b: "))
+side_a = float(input("Введите сторону a: "))
+side_b = float(input("Введите сторону b: "))
 
-# square = side_a * side_b
-# perimeter = (side_a + side_b) * 2
+square = side_a * side_b
+perimeter = (side_a + side_b) * 2
 
-# print(f"Периметр прямоугольника = {perimeter}\nПлощадь прямоугольника = {square}")
+print(f"Периметр прямоугольника = {perimeter}\nПлощадь прямоугольника = {square}")
 
 # Задание 2:
 number = (input("Введите пятизначное целое число: "))
