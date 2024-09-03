@@ -19,30 +19,13 @@ resulting_list = CreateFactorialList()
 print(resulting_list)
 
 # Задание 2:
-import collections
+pets = {}
 
-pets = {
-    1: {
-        "Мухтар": {
-            "Вид питомца": "Собака",
-            "Возраст питомца": 9,
-            "Имя владельца": "Павел"
-        },
-    },
-    2: {
-        "Каа": {
-            "Вид питомца": "желторотый питон",
-            "Возраст питомца": 19,
-            "Имя владельца": "Саша"
-        },
-    }
-}
-
-# инфо по ID
+# инфо по id
 def get_pet(ID):
-    return pets[ID] if ID in pets else False
+    return pets.get(ID, False)
 
-# Функция для получения суффикса для возраста
+# возраст
 def get_suffix(age):
     if age % 10 == 1 and age % 100 != 11:
         return "год"
@@ -51,32 +34,25 @@ def get_suffix(age):
     else:
         return "лет"
 
-# отображение списка всех питомцев
-def pets_list():
-    for ID, pet_info in pets.items():
-        for name, details in pet_info.items():
-            suffix = get_suffix(details["Возраст питомца"])
-            print(f'{ID}: Это {details["Вид питомца"]} по кличке "{name}". Возраст питомца: {details["Возраст питомца"]} {suffix}. Имя владельца: {details["Имя владельца"]}')
-
-# создание новой записи о питомце
+# созданиt новой записи
 def create():
-    last = collections.deque(pets, maxlen=1)[0]
-    new_id = last + 1
-    name = input("Введите имя питомца: ")
-    species = input("Введите вид питомца: ")
-    age = int(input("Введите возраст питомца: "))
-    owner = input("Введите имя владельца: ")
+    new_id = max(pets.keys(), default=0) + 1
+    
+    pet_name = input("Введите имя питомца: ")
+    pet_type = input("Введите вид питомца: ")
+    pet_age = int(input("Введите возраст питомца: "))
+    owner_name = input("Введите имя владельца: ")
     
     pets[new_id] = {
-        name: {
-            "Вид питомца": species,
-            "Возраст питомца": age,
-            "Имя владельца": owner
+        pet_name: {
+            "Вид питомца": pet_type,
+            "Возраст питомца": pet_age,
+            "Имя владельца": owner_name
         }
     }
-    print(f"Питомец {name} добавлен с ID {new_id}.")
+    print(f"Питомец {pet_name} добавлен с ID {new_id}.")
 
-# отображение информации о питомце
+# отображние инфо по id
 def read():
     ID = int(input("Введите ID питомца для просмотра информации: "))
     pet = get_pet(ID)
@@ -87,7 +63,7 @@ def read():
     else:
         print(f"Питомец с ID {ID} не найден.")
 
-# обновление информации о питомце
+# обновление инфо
 def update():
     ID = int(input("Введите ID питомца для обновления информации: "))
     pet = get_pet(ID)
@@ -106,7 +82,7 @@ def update():
     else:
         print(f"Питомец с ID {ID} не найден.")
 
-# удаление записи о питомце
+# удаление записи 
 def delete():
     ID = int(input("Введите ID питомца для удаления: "))
     pet = get_pet(ID)
@@ -116,6 +92,14 @@ def delete():
     else:
         print(f"Питомец с ID {ID} не найден.")
 
+# отображение списка 
+def pets_list():
+    for ID, pet_info in pets.items():
+        for name, details in pet_info.items():
+            suffix = get_suffix(details["Возраст питомца"])
+            print(f'{ID}: Это {details["Вид питомца"]} по кличке "{name}". Возраст питомца: {details["Возраст питомца"]} {suffix}. Имя владельца: {details["Имя владельца"]}')
+
+# программа
 def main():
     while True:
         command = input("Введите команду (create, read, update, delete, list, stop): ").strip().lower()
