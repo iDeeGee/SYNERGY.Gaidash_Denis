@@ -59,7 +59,9 @@ def read():
     if pet:
         for name, details in pet.items():
             suffix = get_suffix(details["Возраст питомца"])
-            print(f'Это {details["Вид питомца"]} по кличке "{name}". Возраст питомца: {details["Возраст питомца"]} {suffix}. Имя владельца: {details["Имя владельца"]}')
+            print(f'Это {details["Вид питомца"]} по кличке "{name}". 
+                   Возраст питомца: {details["Возраст питомца"]} {suffix}.
+                   Имя владельца: {details["Имя владельца"]}')
     else:
         print(f"Питомец с ID {ID} не найден.")
 
@@ -70,9 +72,12 @@ def update():
     if pet:
         for name, details in pet.items():
             print(f"Текущая информация: {details}")
-            species = input(f"Введите новый вид питомца (или нажмите Enter, чтобы оставить '{details['Вид питомца']}'): ") or details["Вид питомца"]
-            age = input(f"Введите новый возраст питомца (или нажмите Enter, чтобы оставить '{details['Возраст питомца']}'): ") or details["Возраст питомца"]
-            owner = input(f"Введите новое имя владельца (или нажмите Enter, чтобы оставить '{details['Имя владельца']}'): ") or details["Имя владельца"]
+            species = input(f"Введите новый вид питомца (или нажмите Enter, чтобы оставить 
+                            '{details['Вид питомца']}'): ") or details["Вид питомца"]
+            age = input(f"Введите новый возраст питомца (или нажмите Enter, чтобы оставить 
+                            '{details['Возраст питомца']}'): ") or details["Возраст питомца"]
+            owner = input(f"Введите новое имя владельца (или нажмите Enter, чтобы оставить 
+                            '{details['Имя владельца']}'): ") or details["Имя владельца"]
 
             details["Вид питомца"] = species
             details["Возраст питомца"] = int(age)
@@ -97,7 +102,9 @@ def pets_list():
     for ID, pet_info in pets.items():
         for name, details in pet_info.items():
             suffix = get_suffix(details["Возраст питомца"])
-            print(f'{ID}: Это {details["Вид питомца"]} по кличке "{name}". Возраст питомца: {details["Возраст питомца"]} {suffix}. Имя владельца: {details["Имя владельца"]}')
+            print(f'{ID}: Это {details["Вид питомца"]} по кличке "{name}". 
+                  Возраст питомца: {details["Возраст питомца"]} {suffix}. 
+                  Имя владельца: {details["Имя владельца"]}')
 
 # программа
 def main():
