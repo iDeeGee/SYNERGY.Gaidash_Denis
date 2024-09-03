@@ -7,7 +7,7 @@ for _ in range(N):
     numbers.append(number)
 
 reversed_numbers = numbers[::-1]
-print(" ".join(map(str, reversed_numbers)))
+print(*reversed_numbers)
 
 # Задание 2:
 num_N = int(input("Введите количество чисел N: "))
@@ -21,7 +21,7 @@ for i in range(num_N):
     else:
         rearranged_array[i] = array[i//2]
 
-print(" ".join(map(str, rearranged_array)))
+print(*rearranged_array)
 
 # Задание 3:
 m = int(input("Введите максимальную массу, которую может выдержать лодка: "))
