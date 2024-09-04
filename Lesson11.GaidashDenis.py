@@ -1,22 +1,22 @@
-# Задание 1:
+# # Задание 1:
 
-def CreateFactorialList():
-    number = int(input("Введите натуральное число: "))
+# def CreateFactorialList():
+#     number = int(input("Введите натуральное число: "))
     
-    result = 1
-    factorials = []
+#     result = 1
+#     factorials = []
     
-    for i in range(2, number + 1):
-        result *= i
+#     for i in range(2, number + 1):
+#         result *= i
     
-    for i in range(number, 0, -1):
-        factorials.append(result)
-        result //= i  
+#     for i in range(number, 0, -1):
+#         factorials.append(result)
+#         result //= i  
     
-    return factorials
+#     return factorials
 
-resulting_list = CreateFactorialList()
-print(resulting_list)
+# resulting_list = CreateFactorialList()
+# print(resulting_list)
 
 # Задание 2:
 pets = {}
@@ -72,12 +72,9 @@ def update():
     if pet:
         for name, details in pet.items():
             print(f"Текущая информация: {details}")
-            species = input(f"""Введите новый вид питомца (или нажмите Enter, чтобы оставить 
-                            '{details['Вид питомца']}'): """) or details["Вид питомца"]
-            age = input(f"""Введите новый возраст питомца (или нажмите Enter, чтобы оставить 
-                            '{details['Возраст питомца']}'): """) or details["Возраст питомца"]
-            owner = input(f"""Введите новое имя владельца (или нажмите Enter, чтобы оставить 
-                            '{details['Имя владельца']}'): """) or details["Имя владельца"]
+            species = input(f"Введите новый вид питомца (или нажмите Enter, чтобы оставить '{details['Вид питомца']}': ")  or details["Вид питомца"]                            
+            age = input(f"Введите новый возраст питомца (или нажмите Enter, чтобы оставить '{details['Возраст питомца']}'): ") or details["Возраст питомца"]                            
+            owner = input(f"Введите новое имя владельца (или нажмите Enter, чтобы оставить '{details['Имя владельца']}'): ") or details["Имя владельца"]                             
 
             details["Вид питомца"] = species
             details["Возраст питомца"] = int(age)
